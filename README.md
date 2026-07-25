@@ -65,8 +65,10 @@
 
 <p align="center">
   <picture>
-    <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pranav-s79/Pranav-s79/output/github-contribution-grid-snake-dark.svg">
-    <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Pranav-s79/Pranav-s79/output/github-contribution-grid-snake.svg">
-    <img alt="GitHub contribution snake" src="https://raw.githubusercontent.com/Pranav-s79/Pranav-s79/output/github-contribution-grid-snake.svg" width="100%">
+    <img
+      src="https://raw.githubusercontent.com/Pranav-s79/Pranav-s79/output/isometric-contribution-snake.svg"
+      alt="Animated isometric GitHub contribution calendar"
+      width="100%"
+    >
   </picture>
 </p>

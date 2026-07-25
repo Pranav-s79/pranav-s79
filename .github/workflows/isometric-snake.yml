@@ -1,0 +1,63 @@
+name: Isometric contribution snake
+
+on:
+  schedule:
+    - cron: "17 7 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: isometric-contribution-snake
+  cancel-in-progress: true
+
+jobs:
+  generate:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+
+    steps:
+      - name: Check out profile repository
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683
+
+      - name: Set up Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020
+        with:
+          node-version: 22
+
+      - name: Generate isometric contribution snake
+        env:
+          GITHUB_USERNAME: ${{ github.repository_owner }}
+        run: node scripts/generate-isometric-snake.mjs dist/isometric-contribution-snake.svg
+
+      - name: Publish SVG to output branch
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          mkdir -p /tmp/isometric-snake-output
+          cp dist/isometric-contribution-snake.svg /tmp/isometric-snake-output/
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git fetch origin output || true
+
+          if git show-ref --verify --quiet refs/remotes/origin/output; then
+            git switch -C output origin/output
+          else
+            git switch --orphan output
+          fi
+
+          git rm -rf . >/dev/null 2>&1 || true
+          git clean -fdx
+          cp /tmp/isometric-snake-output/isometric-contribution-snake.svg .
+          git add isometric-contribution-snake.svg
+
+          if git diff --cached --quiet; then
+            echo "Isometric snake is already current."
+            exit 0
+          fi
+
+          git commit -m "chore: update isometric contribution snake"
+          git push origin output
