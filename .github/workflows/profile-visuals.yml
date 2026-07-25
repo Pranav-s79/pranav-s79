@@ -57,26 +57,37 @@ jobs:
             dist/github-contribution-grid-snake-dark.svg?palette=github-dark&color_snake=#5C4EE6&color_dots=#161b22,#312e81,#4338ca,#7c3aed,#5C4EE6
 
       - name: Publish SVGs to output branch
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
           set -euo pipefail
+
+          mkdir -p /tmp/snake-output
+          cp dist/github-contribution-grid-snake.svg /tmp/snake-output/
+          cp dist/github-contribution-grid-snake-dark.svg /tmp/snake-output/
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
           git fetch origin output || true
+
           if git show-ref --verify --quiet refs/remotes/origin/output; then
             git switch -C output origin/output
           else
             git switch --orphan output
           fi
+
           git rm -rf . >/dev/null 2>&1 || true
           git clean -fdx
-          cp dist/*.svg .
-          git add github-contribution-grid-snake.svg github-contribution-grid-snake-dark.svg
+
+          cp /tmp/snake-output/*.svg .
+
+          git add github-contribution-grid-snake.svg
+          git add github-contribution-grid-snake-dark.svg
+
           if git diff --cached --quiet; then
             echo "Snake files are already current."
             exit 0
           fi
+
           git commit -m "chore: update contribution snake"
           git push origin output
