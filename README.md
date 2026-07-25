@@ -13,7 +13,7 @@
 <blockquote>
   <p><strong>Hey, I'm Pranav Senthilkumar!</strong></p>
   <p>Electrical engineering student interested in AI/ML, embedded systems, and VLSI.</p>
-  <p><strong>Fields of interest:</strong> Edge AI, Agentic coding, hardware acceleration, computer architecture, digital design, verification, and robotics.</p>
+  <p><strong>Fields of interest:</strong> Edge AI, hardware acceleration, computer architecture, digital design, verification, and robotics.</p>
 </blockquote>
 
 <hr>
@@ -25,10 +25,10 @@
 </p>
 
 <ul>
-  <li><a href="https://github.com/Pranav-s79/regdrift"><strong>regdrift</strong></a> — CI compatibility gate for CMSIS-SVD register maps</li>
-  <li><a href="https://github.com/Pranav-s79/Tadori"><strong>Tadori</strong></a> — evidence-backed repository graphs for coding agents</li>
-  <li><a href="https://github.com/Pranav-s79/ThermGuard"><strong>ThermGuard</strong></a> — calibrated thermal scheduling for many-core processors</li>
-  <li><a href="https://github.com/Pranav-s79/RISCV-ALU"><strong>RISC-V ALU</strong></a> — parameterized arithmetic logic unit with verification</li>
+  <li><a href="https://github.com/Pranav-s79/regdrift"><strong>regdrift</strong></a></li>
+  <li><a href="https://github.com/Pranav-s79/Tadori"><strong>Tadori</strong></a></li>
+  <li><a href="https://github.com/Pranav-s79/ThermGuard"><strong>ThermGuard</strong></a></li>
+  <li><a href="https://github.com/Pranav-s79/RISCV-ALU"><strong>RISC-V ALU</strong></a></li>
 </ul>
 
 <hr>
@@ -46,5 +46,5 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="https://raw.githubusercontent.com/Pranav-s79/Pranav-s79/output/github-contribution-grid-snake-dark.svg">
   <source media="(prefers-color-scheme: light)" srcset="https://raw.githubusercontent.com/Pranav-s79/Pranav-s79/output/github-contribution-grid-snake.svg">
-  <img alt="GitHub contribution snake" src="https://raw.githubusercontent.com/Pranav-s79/Pranav-s79/output/github-contribution-grid-snake.svg">
+  <img alt="GitHub contribution snake" src="https://raw.githubusercontent.com/Pranav-s79/Pranav-s79/output/github-contribution-grid-snake.svg" width="100%">
 </picture>
