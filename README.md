@@ -97,9 +97,17 @@
 
 <p align="center">
   <picture>
+    <source
+      media="(prefers-color-scheme: dark)"
+      srcset="https://raw.githubusercontent.com/Pranav-s79/Pranav-s79/output/pacman-contribution-graph-dark.svg"
+    >
+    <source
+      media="(prefers-color-scheme: light)"
+      srcset="https://raw.githubusercontent.com/Pranav-s79/Pranav-s79/output/pacman-contribution-graph.svg"
+    >
     <img
-      src="https://raw.githubusercontent.com/Pranav-s79/Pranav-s79/output/isometric-contribution-snake.svg"
-      alt="Animated isometric GitHub contribution calendar"
+      src="https://raw.githubusercontent.com/Pranav-s79/Pranav-s79/output/pacman-contribution-graph.svg"
+      alt="Animated Pac-Man GitHub contribution graph"
       width="100%"
     >
   </picture>
